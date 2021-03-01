@@ -6,7 +6,7 @@ NUM=$1
 URL=$2
 
 for (( i=1; i<=$NUM; i++ )); do
-	wget $URL -O /dev/null -q
+	wget $URL -q -O /dev/null
 	W=$((($COLUMNS*$i)/$NUM))
 	echo -ne '\r'
 	printf "#%.0s" {1..$(seq 1 $W)}
